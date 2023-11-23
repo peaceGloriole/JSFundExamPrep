@@ -26,6 +26,7 @@ function solve(input) {
       } else {
         console.log(`error`);
       }
+
     } else if (command == `InsertSpace`) {
       let givenIndex = Number(token[1]);
 
