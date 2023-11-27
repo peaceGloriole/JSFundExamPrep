@@ -10,7 +10,7 @@ function worldTour(arr) {
       let index = Number(actions[1]);
       let newDestination = actions[2];
 
-      if (index >= 0) {
+      if (index >= 0 && index < stop.length) {
         let left = stop.slice(0, index);
         let right = stop.slice(index);
         stop = left + newDestination + right;
@@ -22,7 +22,8 @@ function worldTour(arr) {
       let endIndex = Number(actions[2]);
       let remove = stop.slice(startIndex, endIndex + 1);
 
-      if (startIndex >= 0 && endIndex >= 0 && stop.includes(remove)) {
+      if (startIndex >= 0 && startIndex < stop.length && endIndex >= 0 && endIndex < stop.length &&
+        startIndex <= endIndex && stop.includes(remove)) {
         stop = stop.replace(remove, ``);
       }
 
